@@ -1,11 +1,14 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { SafeAreaView, StyleSheet, Text, View } from "react-native";
+import Navbar from "./src/components/Navbar";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Hell!</Text>
-      <StatusBar style="auto" />
+      <SafeAreaView>
+        <Navbar style={[styles.navbar]} />
+        <StatusBar style="auto" />
+      </SafeAreaView>
     </View>
   );
 }
@@ -13,8 +16,9 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
+    backgroundColor: "#000",
+  },
+  navbar: {
+    maxHeight: "20%",
   },
 });
